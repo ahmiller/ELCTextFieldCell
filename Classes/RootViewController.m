@@ -76,8 +76,11 @@
 	cell.indexPath = indexPath;
 	cell.delegate = self;
 	
+	if (indexPath.row == 2) {
+		// avoid autocapitializing email addresses
+		[cell.rightTextField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+	}
 	if(indexPath.row == 3) {
-	
 		[cell.rightTextField setKeyboardType:UIKeyboardTypeNumberPad];
 	}
 }
